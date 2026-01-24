@@ -1,192 +1,31 @@
 {
+  "profiles": {
+    "nvim-data": {
+      "mode": "file",
+      "markers": ["*"],
+      "ignore": ["harpoon", "site", "sessions", "lazy", "tree-sitter-latex", "mason/packages/*"],
+      "intermediate_paths": false
+    }
+  },
+  "include": [
+    "$HOME/dev",
+    { "paths": ["$HOME/buddy"], "stop_on_marker": false, "depth": 3 },
+    { "paths": ["$HOME/Downloads", "$HOME/Documents", "/Applications"], "profile": "browse" },
+    { "paths": ["$HOME"], "profile": "files", "depth": 0 },
+    { "paths": ["$HOME/.config", "$HOME/.cache", "$HOME/bin"], "profile": "files" },
+    { "paths": ["$HOME/.local"], "profile": "browse" },
+    { "paths": ["$HOME/.local/share/nvim"], "profile": "nvim-data" },
+    { "paths": ["$HOME/.local/share/nvim"], "profile": "projects", "ignore": ["mason/packages"] }
+  ],
+
   "sessions": [
     {
       "name": "configs",
-      "windows": [
-        "$HOME/.config/nvim",
-        "$HOME/.config/pfp"
-      ]
-    },
-    {
-      "name": "work",
-      "windows": [
-        "$HOME/vaults/work-organized",
-        "$HOME/dev/ozon/daily-banking"
-      ]
-    },
-    {
-      "name": "startup",
-      "windows":[
-        "$HOME/dev/personal/super-startup/backend/"
-      ]
-    },
-    {
-      "name": "zmk",
-      "windows": [
-        "$HOME/dev/personal/keebs/zmk/app",
-        "$HOME/dev/personal/keebs/zmk-config-nijuni/config/corne.keymap"
-      ]
+      "windows": ["$HOME/.config/nvim", "$HOME/.config/pfp"]
     },
     {
       "name": "pfp",
-      "windows": [
-        "$HOME/dev/personal/pfp",
-        "$HOME/.config/pfp"
-      ]
-    },
-    {
-      "name": "neovim",
-      "windows": [
-        "$HOME/dev/personal/neovim",
-        "$HOME/.config/nvim"
-      ]
-    }
-  ],
-  "include": [
-    {
-      "paths": [
-        "$HOME/dev"
-      ],
-      "ignore": {
-        "exact": [
-          "zephyr"
-        ]
-      },
-      "include_intermediate_paths": true
-    },
-    {
-      "paths": [
-        "$HOME/Library/Mobile Documents/iCloud~md~obsidian"
-      ],
-      "mode": "dir",
-      "markers": {
-        "pattern": [
-          ".obsidian"
-        ]
-      },
-      "yield_on_marker": true,
-      "include_intermediate_paths": true
-    },
-    {
-      "paths": [
-        "$HOME/Downloads",
-        "$HOME/Documents",
-        "/Applications"
-      ],
-      "mode": "dir",
-      "depth": 2,
-      "markers": {
-        "pattern": [
-          ".*"
-        ]
-      },
-      "yield_on_marker": false,
-      "include_intermediate_paths": true
-    },
-    {
-      "paths": [
-        "$HOME/vaults/work/",
-        "$HOME/vaults/work-organized/",
-        "$HOME/vaults/personal/"
-      ],
-      "mode": "dir",
-      "markers": {
-        "pattern": [
-          ".*"
-        ]
-      },
-      "yield_on_marker": false,
-      "include_intermediate_paths": true
-    },
-    {
-      "paths": [
-        "$HOME/dev/ozon"
-      ],
-      "markers": {
-        "exact": [
-          ".git_worktree"
-        ],
-        "chain_root_markers": false
-      },
-      "include_intermediate_paths": false
-    },
-    {
-      "paths": [
-        "$HOME"
-      ],
-      "mode": "file",
-      "markers": {
-        "pattern": [
-          ".*"
-        ]
-      },
-      "depth": 0
-    },
-    {
-      "paths": [
-        "$HOME/dev/personal/keebs/zephyr",
-        "$HOME/dev/personal/keebs/zmk/app",
-        "$HOME/.config/nvim",
-        "$HOME/.config/nvim.bak"
-      ],
-      "depth": 0
-    },
-    {
-      "paths": [
-        "$HOME/.config",
-        "$HOME/.cache",
-        "$HOME/bin"
-      ],
-      "mode": "file",
-      "markers": {
-        "pattern": [
-          ".*"
-        ]
-      },
-      "depth": 1
-    },
-    {
-      "paths": [
-        "$HOME/.local"
-      ],
-      "mode": "dir",
-      "depth": 2,
-      "markers": {
-        "pattern": [
-          ".*"
-        ]
-      },
-      "yield_on_marker": false,
-      "include_intermediate_paths": true
-    },
-    {
-      "paths": [
-        "$HOME/.local/share/nvim"
-      ],
-      "mode": "file",
-      "markers": {
-        "pattern": [
-          ".*"
-        ]
-      },
-      "ignore": {
-        "exact": [
-          "sessions",
-          "lazy",
-          "tree-sitter-latex"
-        ],
-        "pattern": [
-          "mason/packages"
-        ]
-      },
-      "include_intermediate_paths": false
-    },
-    {
-      "paths": [
-        "$HOME/.local/share/nvim"
-      ],
-      "mode": "dir",
-      "include_intermediate_paths": true
+      "windows": ["$HOME/dev/pfp/", "$HOME/.config/pfp"]
     }
   ]
 }

@@ -55,20 +55,20 @@ export LC_TYPE=en_US.UTF-8
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-alias vim='nvim'
-alias n='nvim'
+# alias vim='nvim'
+# alias n='nvim'
 alias firenvim='NVIM_FIRENVIM=1 nvim'
 alias np='nvim --headless "+Lazy sync" +qa'
 alias vimdiff='nvim -d'
 
-alias t='tmux'
+# alias t='tmux'
 alias ta='tmux a'
 alias tk='tmux kill-session -t'
 alias tka='tmux kill-server'
 
 alias pfps='pfp start -a'
 
-alias c='clear'
+# alias c='clear'
 alias psv='source venv/bin/activate'
 
 alias al='lsd -alh'
@@ -89,25 +89,26 @@ alias vpn-4vps-down='sudo wg-quick down ~/Downloads/4vps.conf'
 alias vpn-simplecloud-up='sudo wg-quick up ~/Downloads/simplecloud.conf'
 alias vpn-simplecloud-down='sudo wg-quick down ~/Downloads/simplecloud.conf'
 
+alias serena='uvx --from git+https://github.com/oraios/serena serena'
+
 # ssh-add --apple-load-keychain 2> /dev/null
 source "$HOME/.zsh_vi"
 
-export PATH=$PATH:~/.o3-cli/bin
-
 eval "$(pyenv init -)"
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
-export NVM_DIR="$HOME/.config/nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# bun completions
+[ -s "/Users/eyev/.bun/_bun" ] && source "/Users/eyev/.bun/_bun"
 
-# Added by Windsurf
-export PATH="/Users/egdementyev/.codeium/windsurf/bin:$PATH"
-# The following lines have been added by Docker Desktop to enable Docker CLI completions.
-fpath=(/Users/egdementyev/.docker/completions $fpath)
-autoload -Uz compinit
-compinit
-# End of Docker CLI completions
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+. "$HOME/.local/share/../bin/env"
+
+eval "$(zoxide init zsh)"
+
+# Amp CLI
+export PATH="/Users/eyev/.amp/bin:$PATH"
+
+export HOMEBREW_NO_ENV_HINTS=1
