@@ -68,8 +68,9 @@ alias pip='openclaw tui --url ws://172.29.172.1:18987 --token $OPENCLAW_GATEWAY_
 # ssh-add --apple-load-keychain 2> /dev/null
 source "$HOME/.zsh_vi"
 
-if [[ -n $(command -v pyenv) ]] then;
+if [[ -n $(command -v pyenv) ]]; then
   eval "$(pyenv init -)"
+fi
 
 # bun completions
 [[ -s $HOME/.bun/_bun ]] && source "$HOME/.bun/_bun"
@@ -79,7 +80,7 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 . "$HOME/.local/share/../bin/env"
 
-if [[ -n $(command -v zoxide) ]] then;
+if [[ -n $(command -v zoxide) ]]; then
   eval "$(zoxide init zsh)"
 fi
 
