@@ -10,8 +10,8 @@ ZSH_THEME="half-life"
 
 # Uncomment one of the following lines to change the auto-update behavior
 # zstyle ':omz:update' mode disabled  # disable automatic updates
-# zstyle ':omz:update' mode auto      # update automatically without asking
-zstyle ':omz:update' mode reminder  # just remind me to update when it's time
+zstyle ':omz:update' mode auto      # update automatically without asking
+# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 # Uncomment the following line to change how often to auto-update (in days).
 # zstyle ':omz:update' frequency 13
@@ -55,51 +55,23 @@ export LC_TYPE=en_US.UTF-8
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# alias vim='nvim'
-# alias n='nvim'
 alias firenvim='NVIM_FIRENVIM=1 nvim'
-alias np='nvim --headless "+Lazy sync" +qa'
 alias vimdiff='nvim -d'
-
-# alias t='tmux'
-alias ta='tmux a'
-alias tk='tmux kill-session -t'
-alias tka='tmux kill-server'
-
-alias pfps='pfp start -a'
-
-# alias c='clear'
-alias psv='source venv/bin/activate'
-
-alias al='lsd -alh'
-alias la='lsd -alh'
-alias ld='lazydocker'
-alias lg='lazygit'
-alias lm='lazynpm'
-alias pm='pnpm'
 
 alias dotfiles='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 alias lgd='lazygit -g $HOME/.dotfiles -w $HOME'
 
-alias psync='pass git pull && pass git push'
-alias pgit='pass git'
-
-alias vpn-4vps-up='sudo wg-quick up ~/Downloads/4vps.conf'
-alias vpn-4vps-down='sudo wg-quick down ~/Downloads/4vps.conf'
-alias vpn-simplecloud-up='sudo wg-quick up ~/Downloads/simplecloud.conf'
-alias vpn-simplecloud-down='sudo wg-quick down ~/Downloads/simplecloud.conf'
-
 alias serena='uvx --from git+https://github.com/oraios/serena serena'
+
+alias pip='openclaw tui --url ws://172.29.172.1:18987 --token $OPENCLAW_GATEWAY_TOKEN'
 
 # ssh-add --apple-load-keychain 2> /dev/null
 source "$HOME/.zsh_vi"
 
 eval "$(pyenv init -)"
 
-
 # bun completions
 [ -s "/Users/eyev/.bun/_bun" ] && source "/Users/eyev/.bun/_bun"
-
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
@@ -108,7 +80,6 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 eval "$(zoxide init zsh)"
 
-# Amp CLI
-export PATH="/Users/eyev/.amp/bin:$PATH"
-
 export HOMEBREW_NO_ENV_HINTS=1
+
+fpath=(~/.zsh.d/ $fpath)

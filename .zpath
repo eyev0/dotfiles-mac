@@ -32,3 +32,5 @@ export PSQL_EDITOR="$EDITOR"
 
 # source $HOME/.openai-codex
 source $HOME/.google-ai
+
+source $HOME/.openclaw-token

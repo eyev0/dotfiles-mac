@@ -13,6 +13,7 @@
     { "paths": ["$HOME/Downloads", "$HOME/Documents", "/Applications"], "profile": "browse" },
     { "paths": ["$HOME"], "profile": "files", "depth": 0 },
     { "paths": ["$HOME/.config", "$HOME/.cache", "$HOME/bin"], "profile": "files" },
+    { "paths": ["$HOME/.config/nvim", "$HOME/.config/nvim-config-legacy"], "profile": "browse" },
     { "paths": ["$HOME/.local"], "profile": "browse" },
     { "paths": ["$HOME/.local/share/nvim"], "profile": "nvim-data" },
     { "paths": ["$HOME/.local/share/nvim"], "profile": "projects", "ignore": ["mason/packages"] }
