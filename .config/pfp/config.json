@@ -12,6 +12,7 @@
     { "paths": ["$HOME/buddy"], "stop_on_marker": false, "depth": 3 },
     { "paths": ["$HOME/Downloads", "$HOME/Documents", "/Applications"], "profile": "browse" },
     { "paths": ["$HOME"], "profile": "files", "depth": 0 },
+    { "paths": ["$HOME"], "profile": "browse", "depth": 0 },
     { "paths": ["$HOME/.config", "$HOME/.cache", "$HOME/bin"], "profile": "files" },
     { "paths": ["$HOME/.config/nvim", "$HOME/.config/nvim-config-legacy"], "profile": "browse" },
     { "paths": ["$HOME/.local"], "profile": "browse" },
