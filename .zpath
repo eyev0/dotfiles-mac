@@ -24,9 +24,11 @@ export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
 export GONOPROXY='none'
 
-export GOPROXY=https://proxy.golang.org,direct
 export GOPRIVATE=
 export GOSUMDB=off
+
+export GOENV_ROOT="$HOME/.goenv"
+export PATH="$GOENV_ROOT/bin:$PATH"
 
 export PSQL_EDITOR="$EDITOR"
 

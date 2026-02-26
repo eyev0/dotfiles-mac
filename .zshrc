@@ -87,3 +87,9 @@ fi
 export HOMEBREW_NO_ENV_HINTS=1
 
 fpath=(~/.zsh.d/ $fpath)
+
+[[ -s $HOME/.o3-env ]] && source "$HOME/.o3-env"
+
+export PATH=$PATH:~/.o3-cli/bin
+export OPENCODE_DISABLE_DEFAULT_PLUGINS=true
+export OPENCODE_DISABLE_MODELS_FETCH=1

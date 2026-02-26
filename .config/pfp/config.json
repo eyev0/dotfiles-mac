@@ -49,6 +49,14 @@
 
   "sessions": [
     {
+      "name": "vault",
+      "windows": ["$HOME/dev/sync/mbp4-eyev/vault"]
+    },
+    {
+      "name": "brin-ng",
+      "windows": ["$HOME/dev/ozon/brin-ng/"]
+    },
+    {
       "name": "configs",
       "windows": ["$HOME/.config/nvim", "$HOME/.config/pfp"]
     },
