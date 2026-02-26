@@ -1,6 +1,33 @@
 {
   "profiles": {
-    "nvim-data": {
+    "projects": {
+      "mode": "dir",
+      "markers": [".git", "Cargo.toml", "go.mod", "package.json", ".project"],
+      "ignore": ["node_modules", "target", "venv"],
+      "depth": 255,
+      "stop_on_marker": true,
+      "intermediate_paths": true,
+      "show_hidden": false,
+      "traverse_hidden_dirs": false
+    },
+    "browse": {
+      "mode": "dir",
+      "markers": ["*"],
+      "depth": 2,
+      "stop_on_marker": false,
+      "intermediate_paths": true,
+      "show_hidden": false,
+      "traverse_hidden_dirs": false
+    },
+    "files": {
+      "mode": "file",
+      "markers": ["*"],
+      "depth": 1,
+      "intermediate_paths": false,
+      "show_hidden": true,
+      "traverse_hidden_dirs": false
+    },
+    "nvim-files": {
       "mode": "file",
       "markers": ["*"],
       "ignore": ["harpoon", "site", "sessions", "lazy", "tree-sitter-latex", "mason/packages/*"],
@@ -8,7 +35,7 @@
     }
   },
   "include": [
-    "$HOME/dev",
+    { "paths": ["$HOME/dev"], "profile": "projects" },
     { "paths": ["$HOME/buddy"], "stop_on_marker": false, "depth": 3 },
     { "paths": ["$HOME/Downloads", "$HOME/Documents", "/Applications"], "profile": "browse" },
     { "paths": ["$HOME"], "profile": "files", "depth": 0 },
@@ -16,7 +43,7 @@
     { "paths": ["$HOME/.config", "$HOME/.cache", "$HOME/bin"], "profile": "files" },
     { "paths": ["$HOME/.config/nvim", "$HOME/.config/nvim-config-legacy"], "profile": "browse" },
     { "paths": ["$HOME/.local"], "profile": "browse" },
-    { "paths": ["$HOME/.local/share/nvim"], "profile": "nvim-data" },
+    { "paths": ["$HOME/.local/share/nvim"], "profile": "nvim-files" },
     { "paths": ["$HOME/.local/share/nvim"], "profile": "projects", "ignore": ["mason/packages"] }
   ],
 
