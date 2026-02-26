@@ -63,7 +63,7 @@ alias lgd='lazygit -g $HOME/.dotfiles -w $HOME'
 
 alias serena='uvx --from git+https://github.com/oraios/serena serena'
 
-alias pip='openclaw tui --url ws://172.29.172.1:18987 --token $OPENCLAW_GATEWAY_TOKEN'
+alias pipboy='openclaw tui --url ws://172.29.172.1:18987 --token $OPENCLAW_GATEWAY_TOKEN'
 
 # ssh-add --apple-load-keychain 2> /dev/null
 source "$HOME/.zsh_vi"
@@ -87,3 +87,4 @@ fi
 export HOMEBREW_NO_ENV_HINTS=1
 
 fpath=(~/.zsh.d/ $fpath)
+
