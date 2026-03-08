@@ -30,8 +30,4 @@ export GOSUMDB=off
 
 export PSQL_EDITOR="$EDITOR"
 
-[[ -s $HOME/.openai-codex ]] && source $HOME/.openai-codex
-
-[[ -s $HOME/.openclaw-token ]] && source $HOME/.openclaw-token
-
-[[ -s $HOME/.google-ai ]] && source $HOME/.google-ai
+[[ -s $HOME/.env ]] && source $HOME/.env
