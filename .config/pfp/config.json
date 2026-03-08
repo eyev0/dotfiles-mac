@@ -55,6 +55,10 @@
     {
       "name": "pfp",
       "windows": ["$HOME/dev/pfp/", "$HOME/.config/pfp"]
+    },
+    {
+      "name": "shepni",
+      "windows": ["$HOME/dev/shepni"]
     }
   ]
 }
