@@ -61,12 +61,8 @@ alias vimdiff='nvim -d'
 alias dotfiles='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 alias lgd='lazygit -g $HOME/.dotfiles -w $HOME'
 
-alias serena='uvx --from git+https://github.com/oraios/serena serena'
-
-alias pip='openclaw tui --url ws://172.29.172.1:18987 --token $OPENCLAW_GATEWAY_TOKEN'
-
 # ssh-add --apple-load-keychain 2> /dev/null
-source "$HOME/.zsh_vi"
+[[ -s $HOME/.zsh_vi ]] &&  source "$HOME/.zsh_vi"
 
 if [[ -n $(command -v pyenv) ]]; then
   eval "$(pyenv init -)"
@@ -78,7 +74,7 @@ fi
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
-. "$HOME/.local/share/../bin/env"
+[[ -s $HOME/.local/share/env ]] && . "$HOME/.local/share/../bin/env"
 
 if [[ -n $(command -v zoxide) ]]; then
   eval "$(zoxide init zsh)"
