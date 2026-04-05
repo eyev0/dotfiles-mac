@@ -1,9 +1,7 @@
-[core]
-	excludesfile = /Users/eyev/.config/git/ignore
 [user]
 	name = Egor Dementyev
 	email = eyevey0@gmail.com
-	signingkey = 30385A3131D910E7
+	signingKey = eyevey0@gmail.com
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
@@ -39,7 +37,7 @@
 [url "git@gitlab.ozon.ru:"]
 	insteadOf = https://gitlab.ozon.ru/
 [oh-my-zsh]
-	git-commit-alias = bf2948322b134dfc30e7ed7e7cd267ae064795bc
+	git-commit-alias = 9e2c1548c3dfeefd055e1c6606f66657093ae928
 [alias]
 	build = "!a() {\nlocal _scope _attention _message\nwhile [ $# -ne 0 ]; do\ncase $1 in\n  -s | --scope )\n    if [ -z $2 ]; then\n      echo \"Missing scope!\"\n      return 1\n    fi\n    _scope=\"$2\"\n    shift 2\n    ;;\n  -a | --attention )\n    _attention=\"!\"\n    shift 1\n    ;;\n  * )\n    _message=\"${_message} $1\"\n    shift 1\n    ;;\nesac\ndone\ngit commit -m \"build${_scope:+(${_scope})}${_attention}:${_message}\"\n}; a"
 	chore = "!a() {\nlocal _scope _attention _message\nwhile [ $# -ne 0 ]; do\ncase $1 in\n  -s | --scope )\n    if [ -z $2 ]; then\n      echo \"Missing scope!\"\n      return 1\n    fi\n    _scope=\"$2\"\n    shift 2\n    ;;\n  -a | --attention )\n    _attention=\"!\"\n    shift 1\n    ;;\n  * )\n    _message=\"${_message} $1\"\n    shift 1\n    ;;\nesac\ndone\ngit commit -m \"chore${_scope:+(${_scope})}${_attention}:${_message}\"\n}; a"
@@ -55,3 +53,5 @@
 	wip = "!a() {\nlocal _scope _attention _message\nwhile [ $# -ne 0 ]; do\ncase $1 in\n  -s | --scope )\n    if [ -z $2 ]; then\n      echo \"Missing scope!\"\n      return 1\n    fi\n    _scope=\"$2\"\n    shift 2\n    ;;\n  -a | --attention )\n    _attention=\"!\"\n    shift 1\n    ;;\n  * )\n    _message=\"${_message} $1\"\n    shift 1\n    ;;\nesac\ndone\ngit commit -m \"wip${_scope:+(${_scope})}${_attention}:${_message}\"\n}; a"
 [credential]
 	helper = osxkeychain
+[commit]
+	gpgsign = true

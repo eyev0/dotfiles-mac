@@ -43,17 +43,7 @@ source $ZSH/oh-my-zsh.sh
 export LANGUAGE=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
-export LC_TYPE=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
+export LC_CTYPE=en_US.UTF-8
 
 alias firenvim='NVIM_FIRENVIM=1 nvim'
 alias vimdiff='nvim -d'
@@ -63,10 +53,10 @@ alias lgd='lazygit -g $HOME/.dotfiles -w $HOME'
 
 alias serena='uvx --from git+https://github.com/oraios/serena serena'
 
-alias pipboy='openclaw tui --url ws://172.29.172.1:18987 --token $OPENCLAW_GATEWAY_TOKEN'
+alias pipboy='OPENCLAW_ALLOW_INSECURE_PRIVATE_WS=1 openclaw tui --url ws://172.29.172.1:18987 --token $OPENCLAW_GATEWAY_TOKEN'
 
 # ssh-add --apple-load-keychain 2> /dev/null
-source "$HOME/.zsh_vi"
+[[ -f "$HOME/.zsh_vi" ]] && source "$HOME/.zsh_vi"
 
 if [[ -n $(command -v pyenv) ]]; then
   eval "$(pyenv init -)"
@@ -78,7 +68,7 @@ fi
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
-. "$HOME/.local/share/../bin/env"
+[[ -f "$HOME/.local/bin/env" ]] && . "$HOME/.local/bin/env"
 
 if [[ -n $(command -v zoxide) ]]; then
   eval "$(zoxide init zsh)"
@@ -88,3 +78,5 @@ export HOMEBREW_NO_ENV_HINTS=1
 
 fpath=(~/.zsh.d/ $fpath)
 
+# OpenClaw Completion
+[[ -f $HOME/.openclaw/completions/openclaw.zsh ]] && source "$HOME/.openclaw/completions/openclaw.zsh"
